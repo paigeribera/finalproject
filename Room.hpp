@@ -9,7 +9,10 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "Pirate.hpp"
 using namespace std;
+
+class Pirate;
 
 class Room {
     public:
@@ -17,9 +20,16 @@ class Room {
         virtual ~Room();
         virtual string getName();
         virtual string getDescription();
+        virtual void menu();
         // adds insult to map
         // virtual void getInsult();
         //virtual void userMenu();
+        void setRooms(Room*, Room*, Room*, Room*);
+        Room* getLeft();
+        Room* getBack();
+        Room* getRight();
+        Room* getForward();
+        virtual void interact();
         
     protected:
         Room* forward;
@@ -30,5 +40,6 @@ class Room {
     string description;
     // "object" that holds the clue...chest, basket, painting, whatever
     vector<string> container;
+    Pirate* pirate;
 };
 #endif

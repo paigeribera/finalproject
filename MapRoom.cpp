@@ -1,6 +1,6 @@
-#include "BossRoom.hpp"
+#include "MapRoom.hpp"
 
-BossRoom::BossRoom() {
+MapRoom::MapRoom() {
     // will point to bar object
     Room* forward = NULL;
     // will point to painting object
@@ -9,6 +9,6 @@ BossRoom::BossRoom() {
     Room* right = NULL;
     Room* back = NULL;
     
-    name = "The Swordmaster's Hut";
-    description = "I hope your wit is as sharp as your sword.";
+    name = "Cartographer's Shack";
+    description = "I'm the map, I'm the map...";
 }

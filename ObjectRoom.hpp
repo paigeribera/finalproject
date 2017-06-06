@@ -4,29 +4,24 @@
 ** Date: 
 ** Description: 
 *********************************************************************/
-#ifndef GAME_HPP
-#define GAME_HPP
+#ifndef OBJECTROOM_HPP
+#define OBJECTROOM_HPP
 #include <string>
 #include <iostream>
 #include <vector>
 using namespace std;
 #include "Room.hpp"
 #include "Pirate.hpp"
-#include "StartingRoom.hpp"
-#include "BarRoom.hpp"
-#include "BossRoom.hpp"
-#include "ShipRoom.hpp"
-#include "MapRoom.hpp"
 
-class Game {
-    public:
-        Game();
-        ~Game();
-        void play();
-        void changeRoom();
-    
+class ObjectRoom: public Room {
+    public: 
+        ObjectRoom();
+        
     protected:
-        int moves;
+        ObjectRoom* forward;
+        ObjectRoom* left;
+        ObjectRoom* right;
+        ObjectRoom* back;
         Pirate* pirate;
 };
 #endif

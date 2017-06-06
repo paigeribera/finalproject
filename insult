@@ -1,0 +1,33 @@
+insult map
+
+map<int, bool>
+
+key is an int that lets me know the corresponding counter insult
+set to true or false depending on whether or not the player has 'picked up' the insult
+
+1. Even BEFORE they smell your breath? :: People fall at my feet when they see me coming!
+^^^ given to player in the beginning
+location: startingRoom
+how to get: cout statements in beginning involve player starting on his trial to collect
+insults for "insult sword fighting" the pirate task masters were kind enough to provide him
+a journal with one insult in it to start him off
+
+2. Your hemorroids are flaring up again, eh? :: I'm not going to take your insolence sitting down!
+location: sketched on drunk pirate's peg leg who is in ship room
+how to get: user must opt to touch/interact with drunk pirate
+
+3. He must have taught you everything you know. :: I once owned a dog that was smarter than you.'
+location: ship room
+how to get: interact with paper on ground covered in grog 
+
+4. You run THAT fast? :: Nobody's ever drawn blood from me and nobody ever will.
+location: bar room
+how to get: go "left", look at painting, "push" painting (have option be push or pull)
+
+5. You make me think somebody already did. :: You make me want to puke.
+location: cartographer's hut
+how to get: talk to wally
+
+6. I'm glad to hear you attended your family reunion! :: I've spoken with apes more polite than you.
+location: cartographer's hut
+how to get: use wally's monocle on map in "forward" location 

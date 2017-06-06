@@ -16,11 +16,13 @@ class Journal {
     public:
         Journal();
         int getNumOfPages();
-        void addInsult();
-        void deleteInsult();
+        void addInsult(int);
+        void deleteInsult(int);
+        void display();
         
     protected:
         int numOfPages;
-        map<int, string> journal;
+        map<int, bool> journal;
+        map<int, bool>::iterator it;
 };
 #endif

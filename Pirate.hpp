@@ -13,13 +13,17 @@
 #include "Journal.hpp"
 using namespace std;
 
+class Room;
+class Journal;
+
 class Pirate {
     public:
-        Pirate();
+        Pirate(Room*);
         void updateLocation(Room*);
         Room* getLocation();
         int getHealth();
         void updateHealth();
+        Journal* getJournal();
         
     protected:
         Room* location;

@@ -1,8 +1,7 @@
 #include "Pirate.hpp"
-#include "Journal.hpp"
 
-Pirate::Pirate() {
-    // location = startingRoom;
+Pirate::Pirate(Room *startingLocation) {
+    location = startingLocation;
     name = "Guybrush Threepwood";
     description = "A mighty pirate-in-training who can hold his breath for 10 minutes.";
     health = 100;
@@ -30,4 +29,8 @@ void Pirate::updateHealth() {
     } else {
         cout << "Guybrush is dead. You play games like a dairy farmer." << endl;
     }
+}
+
+Journal* Pirate::getJournal() {
+    return journal;
 }
