@@ -29,7 +29,7 @@ class Room {
         Room* getBack();
         Room* getRight();
         Room* getForward();
-        virtual void interact();
+        virtual int interact();
         
     protected:
         Room* forward;

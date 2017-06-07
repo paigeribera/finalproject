@@ -22,6 +22,7 @@ class StartingRoom: public Room {
     public: 
         StartingRoom();
         StartingRoom(string);
+        int interact();
         
     protected:
         Room* forward;

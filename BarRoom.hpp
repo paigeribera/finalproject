@@ -21,7 +21,7 @@ using namespace std;
 class BarRoom: public Room {
     public: 
         BarRoom();
-        void interact();
+        int interact();
         
     protected:
         Room* forward;

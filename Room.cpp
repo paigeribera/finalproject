@@ -26,7 +26,7 @@ void Room::setRooms(Room* room1, Room* room2, Room* room3, Room* room4) {
     right = room4;
 }
 
-void Room::interact() {
+int Room::interact() {
     
 }
 

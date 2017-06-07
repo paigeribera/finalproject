@@ -18,8 +18,8 @@
 void testJournal();
 
 int main() {
-    // Game game;
-    // game.play();
+    Game game;
+    game.play();
     
     // JOSHS SUGGESTIONS
     // 1. create a func for setting all rooms instead of individually -- DONE
@@ -29,9 +29,9 @@ int main() {
     // Room* mapShack = new MapRoom();
     // Room* bossHut = new BossRoom();
     // townSquare->setRooms(ship, bossHut, bar, mapShack);
-    
-    Game game;
-    game.play();
+    //testJournal();
+    // Game game;
+    // game.play();
     // cout << townSquare->getName() << endl;
     // Pirate* player = new Pirate();
     // player->updateLocation(townSquare);
@@ -106,6 +106,12 @@ int main() {
 
 
 void testJournal() {
+    Game game;
+   Pirate *p = game.getPirate();
+    Journal *j = p->getJournal();
+    j->addInsult(1);
+    j->addInsult(3);
+    j->display();
         Journal journal;
     journal.addInsult(2);
     journal.addInsult(3);

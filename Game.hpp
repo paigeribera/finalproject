@@ -24,7 +24,7 @@ class Game {
         ~Game();
         void play();
         void changeRoom();
-    
+        Pirate *getPirate();
     protected:
         int moves;
         Pirate* pirate;
