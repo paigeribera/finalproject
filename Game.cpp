@@ -28,7 +28,7 @@ void Game::play() {
      hasn't used more than 20 moves...?? maybe handle guybrush dying
      a different way since he would ever die at the end while battling
      the swordmaster...*/
-    while (pirate->getHealth() > 0 && moves < 20) {
+    while (moves < 20) {
         // get pirate current location info. name, description
         pirate->getLocation()->getName();
         pirate->getLocation()->getDescription();
@@ -36,6 +36,7 @@ void Game::play() {
         pirate->getLocation()->interact();
         // otherwise, print moving options.
         changeRoom();
+        moves++;
     }
     // changeRoom();
     // cout << "You enter the " << pirate->getLocation()->getName() << endl;
@@ -54,22 +55,29 @@ Pirate* Game::getPirate() {
 
 void Game::changeRoom() {
     bool validMove = false;
+    
+    /* have some char entered to pull up pirate's journal??? */ 
+    
     while (!validMove) {
-        //cout << "Enter f to move forward, b to move back, l to move left, and r to move right." << endl;
         if (pirate->getLocation()->getForward() != NULL) {
-            cout << "Enter f to move forward." << endl;
+            cout << "Enter f to move forward to the " << pirate->getLocation()->getForward()->getName();
+            cout << " - " << pirate->getLocation()->getForward()->getDescription() << endl;
         }
         if (pirate->getLocation()->getBack() != NULL) {
-            cout << "Enter b to move back." << endl;
+            cout << "Enter b to move back to the " << pirate->getLocation()->getBack()->getName();
+            cout << " - " << pirate->getLocation()->getBack()->getDescription() << endl;
         }
         if (pirate->getLocation()->getLeft() != NULL) {
-            cout << "Enter l to move left." << endl;
+            cout << "Enter l to move left to the " << pirate->getLocation()->getLeft()->getName();
+            cout << " - " << pirate->getLocation()->getLeft()->getDescription() << endl;
         }
         if (pirate->getLocation()->getRight() != NULL) {
-            cout << "Enter r to move right." << endl;
+            cout << "Enter r to move right to the " << pirate->getLocation()->getRight()->getName();
+            cout << " - " << pirate->getLocation()->getRight()->getDescription() << endl;
         }
         char input;
         cin >> input;
+        clearStream();
             switch(input) {
                 case('f'): {
                     if (pirate->getLocation()->getForward() != NULL) {
@@ -92,7 +100,6 @@ void Game::changeRoom() {
                     break;
                 }
                 case('l'): {
-                    cout << "trying to go left" << endl;
                     if (pirate->getLocation()->getLeft() != NULL) {
                         pirate->updateLocation(pirate->getLocation()->getLeft());
                         //cout << "Guybrush moved left" << endl;

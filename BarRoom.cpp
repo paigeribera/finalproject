@@ -11,16 +11,16 @@ BarRoom::BarRoom() {
     
     painting = false;
     name = "Bloody Lip Bar and Grille";
-    description = "Your local grog supplier.";
+    description = "'Your local grog supplier.'";
 }
 
 int BarRoom::interact() {
     int userInput = 0;
     while (!painting) {
         cout << "There is an interesting painting of a man wearing green pants digging a grave. He is shirtless and is missing an eye. He kind of looks like your father." << endl;
-        cout << "Enter 1 to touch the painting. Enter 2 to leave it alone. Enter 3 to leave the room." << endl;
+        cout << "Enter 1 to touch the painting. Enter 2 to leave it alone." << endl;
         cin >> userInput;
-            if (userInput != 1 && userInput != 2 && userInput != 3) {
+            if (userInput != 1 && userInput != 2) {
                 cout << "Another pirate that can't count. Want to try that again?" << endl;
                 cin >> userInput;
             } else if (userInput == 1) {

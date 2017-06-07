@@ -10,5 +10,5 @@ MapRoom::MapRoom() {
     Room* back = NULL;
     
     name = "Cartographer's Shack";
-    description = "I'm the map, I'm the map...";
+    description = "'I'm the map, I'm the map...'";
 }

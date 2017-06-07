@@ -15,6 +15,7 @@ using namespace std;
 #include "StartingRoom.hpp"
 #include "BarRoom.hpp"
 #include "BossRoom.hpp"
+#include "Helper.hpp"
 #include "ShipRoom.hpp"
 #include "MapRoom.hpp"
 

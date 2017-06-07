@@ -12,7 +12,7 @@ StartingRoom::StartingRoom() {
     Room* back = NULL;
     
     name = "Town Square";
-    description = "The Town Square of Scabb Island.";
+    description = "'The Town Square of Scabb Island.'";
 }
 
 int StartingRoom::interact() {

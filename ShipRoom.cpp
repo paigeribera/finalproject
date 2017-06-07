@@ -10,5 +10,5 @@ ShipRoom::ShipRoom() {
     Room* back = NULL;
     
     name = "Boaty McBoatface";
-    description = "It's an old ship that looks like a hangout for drunks. And rats.";
+    description = "'It's an old ship that looks like a hangout for drunks. And rats.'";
 }

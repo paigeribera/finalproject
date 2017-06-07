@@ -14,10 +14,13 @@
 #include "ShipRoom.hpp"
 #include "StartingRoom.hpp"
 #include "Pirate.hpp"
+#include <time.h>
+#include <stdlib.h>
 
 void testJournal();
 
 int main() {
+    srand (time(NULL));
     Game game;
     game.play();
     

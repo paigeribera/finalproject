@@ -21,12 +21,14 @@ using namespace std;
 class BossRoom: public Room {
     public: 
         BossRoom();
+        int interact();
+        void fightBoss();
         
     protected:
         Room* forward;
         Room* left;
         Room* right;
         Room* back;
-        Pirate* pirate;
+        bool bossEngage;
 };
 #endif
