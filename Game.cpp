@@ -28,25 +28,17 @@ void Game::play() {
      hasn't used more than 20 moves...?? maybe handle guybrush dying
      a different way since he would ever die at the end while battling
      the swordmaster...*/
+     Room* location = pirate->getLocation();
     while (moves < 20) {
         // get pirate current location info. name, description
-        pirate->getLocation()->getName();
-        pirate->getLocation()->getDescription();
+        location->getName();
+        location->getDescription();
         // IF you can do something here, pull that up. room->interact();
-        pirate->getLocation()->interact();
+        location->interact();
         // otherwise, print moving options.
         changeRoom();
         moves++;
     }
-    // changeRoom();
-    // cout << "You enter the " << pirate->getLocation()->getName() << endl;
-    // cout << "The plaque by the door reads: " << pirate->getLocation()->getDescription() << endl;
-    // int result = pirate->getLocation()->interact();
-    // if (result != -1) {
-    //     pirate->getJournal()->addInsult(insult);
-    // } else {
-    //     pirate->updateLocation(townSquare);
-    // }
 }
 
 Pirate* Game::getPirate() {

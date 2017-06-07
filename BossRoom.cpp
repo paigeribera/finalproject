@@ -58,7 +58,7 @@ void BossRoom::fightBoss() {
     insults.push_back(insult6);
     int randomInsult = (rand() % 6 + 1);
     
-    cout << health << endl;
+    //cout << health << endl;
     while (pirate->getHealth() > 0) {
         cout << "Sup" << endl;
     }
