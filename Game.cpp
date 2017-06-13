@@ -44,10 +44,6 @@ Game::~Game() {
     pre-conditions: game object exists
     post-conditions: game is played till max moves are hit or player fights boss */
 void Game::play() {
-     /* keep game going while guybrush is alive AND the player
-     hasn't used more than 20 moves...?? maybe handle guybrush dying
-     a different way since he would ever die at the end while battling
-     the swordmaster...*/
     Room* location = pirate->getLocation();
     cout << "You stand in the town square of Scabb Island." << endl;
     cout << "You reminisce on the conversation you had previously with the Pirate Leaders." << endl;
@@ -60,13 +56,19 @@ void Game::play() {
     cout << "Without the proper insults, you won't be able to defeat the Sword Master." << endl;
     cout << "You open the journal. It has a few entries already." << endl;
     pirate->getJournal()->display();
+    cout << endl;
+    cout << endl;
     
-    while (moves < 15 && gameStatus) {
+    while (moves < 12 && gameStatus) {
         interactRoom(location);
         // otherwise, print moving options.
         changeRoom();
         location = pirate->getLocation();
         moves++;
+    }
+    
+    if (moves >= 12) {
+        cout << "You LOSE. Goodday sir." << endl;
     }
 }
 

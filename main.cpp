@@ -23,13 +23,45 @@
 #include <stdlib.h>
 
 void testJournal();
+void menu();
 
 int main() {
     srand (time(NULL));
-    // vector<string> v = {"fck ", "i hate u"};
-    // vector<int> b = {1, 2, 3};
+    menu();
+}
+
+void menu() {
     Game game;
-    game.play();
+    int userInput = 0;
+    cout << "This game is based off of Moneky Island." << endl;
+    cout << "Your goal is to collect enough insults to defeat the Sword Master." << endl;
+    cout << "Insults are found by interacting with objects held within rooms." << endl;
+    cout << "Don't take more than 12 moves or you will lose." << endl;
+    cout << "Good luck!" << endl;
+
+    while (userInput != 2) {
+        cout << "Enter a number to proceed." << endl;
+        cout << "Enter 1 to play the game." << endl;
+        cout << "Enter 2 to quit." << endl;
+        if (!(cin >> userInput)) {
+            cout << "Invalid input. Please try again." << endl;
+            clearStream();
+        } else {
+            switch(userInput) {
+                case 1: {
+                    game.play();
+                    break;
+                }
+                case 2: {
+                    break;
+                }
+                default: {
+                    cout << "Invalid input. Please try again!" << endl;
+                    break;
+                }
+            }
+        }
+    }
 }
 
 void testJournal() {
