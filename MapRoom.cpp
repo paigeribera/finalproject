@@ -1,5 +1,9 @@
 #include "MapRoom.hpp"
 
+/*  name: map room constructor
+    desc: makes map room object
+    pre-conditions: game object exists
+    post-conditions: new map room created */
 MapRoom::MapRoom() {
     // will point to bar object
     Room* forward = NULL;
@@ -11,4 +15,5 @@ MapRoom::MapRoom() {
     
     name = "Cartographer's Shack";
     description = "'I'm the map, I'm the map...'";
+    insult = false;
 }

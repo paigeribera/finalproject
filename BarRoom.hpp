@@ -1,8 +1,11 @@
 /*********************************************************************
 ** Program name: Final Project
 ** Author: Paige Ribera
-** Date: 
-** Description: 
+** Date: 6/13/2017
+** Description: The Bar Room class inherits from Room. It is used to create
+** a specific bar room, which is located to the left of the player's
+** starting point. In the bar room, the insult is accessed by interacting
+** with a painting in the room. 
 *********************************************************************/
 #ifndef BARROOM_HPP
 #define BARROOM_HPP
@@ -21,13 +24,11 @@ using namespace std;
 class BarRoom: public Room {
     public: 
         BarRoom();
-        int interact();
         
     protected:
         Room* forward;
         Room* left;
         Room* right;
         Room* back;
-        bool painting;
 };
 #endif

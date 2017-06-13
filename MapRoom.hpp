@@ -1,8 +1,11 @@
 /*********************************************************************
 ** Program name: Final Project
 ** Author: Paige Ribera
-** Date: 
-** Description: 
+** Date: 6/13/2017
+** Description: The Map Room class inherits from Room. It is used to create
+** a specific map room, which is located to the right of the player's
+** starting point. In the map room, the insult is accessed by interacting
+** with a map on the wall.
 *********************************************************************/
 #ifndef MAPROOM_HPP
 #define MAPROOM_HPP
@@ -27,6 +30,5 @@ class MapRoom: public Room {
         Room* left;
         Room* right;
         Room* back;
-        Pirate* pirate;
 };
 #endif

@@ -1,8 +1,11 @@
 /*********************************************************************
 ** Program name: Final Project
 ** Author: Paige Ribera
-** Date: 
-** Description: 
+** Date: 6/13/2017
+** Description: The Pirate class is used to create a pirate object.
+** The pirate object has a journal which holds the insults the player
+** collects. The pirate's location can be updated and he has a health
+** limit, which can be changed when the player is fighting the boss
 *********************************************************************/
 #ifndef PIRATE_HPP
 #define PIRATE_HPP
@@ -19,6 +22,7 @@ class Journal;
 class Pirate {
     public:
         Pirate(Room*);
+        ~Pirate();
         void updateLocation(Room*);
         Room* getLocation();
         int getHealth();

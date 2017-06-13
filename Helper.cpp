@@ -10,10 +10,10 @@ int getInt(string phrase) {
     int response = 0;
     while(1) {
         cout << phrase << endl;
-        if(cin >> response) {
+        if(cin >> response && (response == 1 || response == 2)) {
             return response;
         }
-        cout << "Please enter an integer" << endl;
+        cout << "Please enter 1 or 2" << endl;
         clearStream();
     }
 }

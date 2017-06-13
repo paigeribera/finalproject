@@ -5,8 +5,9 @@
     pre-conditions: n/a
     post-conditions: journal created w/ 4 pages and one insult already added */
 Journal::Journal() {
-    numOfPages = 4;
+    numOfPages = 3;
     journal.insert(pair<int,bool>(1, true));
+    journal.insert(pair<int,bool>(2, true));
 }
 
 /*  name: addInsult
@@ -25,81 +26,103 @@ void Journal::addInsult(int insultNum) {
         }
     } else {
         cout << "Your journal is full!" << endl;
-        // ask if they want to delete at this point? 1 to keep as is, 2 to delete.
     }
+}
+
+/*  name: findInsult
+    desc: looks for an insult in the journal
+    pre-conditions: journal exists, num passed 
+    post-conditions: return true if insult's in journal already */
+bool Journal::findInsult(int insultNum) {
+    it = journal.find(insultNum);
+    if (it != journal.end()) {
+        return true;
+    }
+    return false;
 }
 
 /*  name: deleteInsult
-    desc: deletes insult from journal as long as it isn't insult #1
+    desc: deletes insult from journal as long as it isn't insult #1 or #2
     pre-conditions: journal exists, insult to be deleted exists
     post-conditions: insult deleted from journal */
-// need input validation at the point this is asked.
-// DISPLAY insults and then them to enter number they want to delete
-void Journal::deleteInsult(int insultNum) {
-    if (insultNum == 1) {
-        cout << "The pirate leaders gave you that one. I'd probably keep it..." << endl;
+void Journal::deleteInsult() {
+    cout << "To delete an insult, enter the number that corresponds to the insult." << endl;
+    display();
+    int insultNum;
+    cin >> insultNum;
+    clearStream();
+    if (cin.good()) {
+        if (insultNum == 1 || insultNum == 2) {
+            cout << "The pirate leaders gave you that one. I'd probably keep it..." << endl;
+        } else {
+             switch(insultNum) {
+                    case 3: {
+                        it = journal.find(insultNum);
+                        if (it != journal.end()) {
+                        journal.erase(3);
+                        } else {
+                            cout << "you can't erase what you don't have silly" << endl;
+                        }
+                        break;
+                    }
+                    case 4: {
+                        it = journal.find(insultNum);
+                        if (it != journal.end()) {
+                        journal.erase(4);
+                        } else {
+                            cout << "you can't erase what you don't have silly" << endl;
+                        }
+                        break;
+                    }
+                    case 5: {
+                        it = journal.find(insultNum);
+                        if (it != journal.end()) {
+                        journal.erase(5);
+                        } else {
+                            cout << "you can't erase what you don't have silly" << endl;
+                        }
+                        break;
+                    }
+                    case 6: {
+                       it = journal.find(insultNum);
+                        if (it != journal.end()) {
+                        journal.erase(6);
+                        } else {
+                            cout << "you can't erase what you don't have silly" << endl;
+                        }
+                        break;
+                    }
+                    default: {
+                        cout << "Can you count mate?" << endl;
+                        // should  i cin another insult num here?
+                        break;
+                    }
+                }
+        }   
     } else {
-         switch(insultNum) {
-                case 2: {
-                    it = journal.find(insultNum);
-                    if (it != journal.end()) {
-                    journal.erase(2);
-                    } else {
-                        cout << "you can't erase what you don't have silly" << endl;
-                    }
-                    break;
-                }
-                case 3: {
-                    it = journal.find(insultNum);
-                    if (it != journal.end()) {
-                    journal.erase(3);
-                    } else {
-                        cout << "you can't erase what you don't have silly" << endl;
-                    }
-                    break;
-                }
-                case 4: {
-                    it = journal.find(insultNum);
-                    if (it != journal.end()) {
-                    journal.erase(4);
-                    } else {
-                        cout << "you can't erase what you don't have silly" << endl;
-                    }
-                    break;
-                }
-                case 5: {
-                    it = journal.find(insultNum);
-                    if (it != journal.end()) {
-                    journal.erase(5);
-                    } else {
-                        cout << "you can't erase what you don't have silly" << endl;
-                    }
-                    break;
-                }
-                case 6: {
-                   it = journal.find(insultNum);
-                    if (it != journal.end()) {
-                    journal.erase(6);
-                    } else {
-                        cout << "you can't erase what you don't have silly" << endl;
-                    }
-                    break;
-                }
-                default: {
-                    cout << "Can you count mate?" << endl;
-                    // should  i cin another insult num here?
-                    break;
-                }
-            }
+        cin >> insultNum;
+        clearStream();
     }
 }
 
+/*  name: getNumOfPages
+    desc: gets num of pages left for insults to fill
+    pre-conditions: journal exists
+    post-conditions: returns int */
+int Journal::getNumOfPages() {
+    return numOfPages;
+}
+
+/*  name: display
+    desc: displays journal
+    pre-conditions: journal exists
+    post-conditions: prints journal entries to console */
 void Journal::display() {
     cout << "To best the swordmaster in a battle of steel and wit, you must ";
     cout << "collect counter insults. Each insult is numbered." << endl;
     cout << "The more you collect, the easier your battle with the ";
     cout << "swordmaster will be. There are 6 total, but your journal ";
-    cout << "only has 4 pages. Here's what you have so far: " << endl;
+    cout << "only has 3 additional pages. Here's what you have so far: " << endl;
     for (it=journal.begin(); it!=journal.end(); it++) {
         if (it->second != false) {
             switch(it->first) {

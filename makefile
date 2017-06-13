@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -std=c++0x
+CXXFLAGS = -std=c++11
 CXXFLAGS += -g
 
-OBJS = main.o Room.cpp Game.cpp BarRoom.cpp BossRoom.cpp Journal.cpp Pirate.cpp ShipRoom.cpp StartingRoom.cpp MapRoom.cpp Helper.cpp
+OBJS = main.o Room.o Game.o BarRoom.o BossRoom.o Journal.o Pirate.o ShipRoom.o StartingRoom.o MapRoom.o Helper.o
 SRS = main.cpp Room.cpp Game.cpp BarRoom.cpp BossRoom.cpp Journal.cpp Pirate.cpp ShipRoom.cpp StartingRoom.cpp MapRoom.cpp Helper.cpp
 HEADERS = Room.hpp Game.hpp BarRoom.hpp BossRoom.hpp Journal.hpp Pirate.hpp ShipRoom.hpp StartingRoom.hpp MapRoom.hpp Helper.hpp
 

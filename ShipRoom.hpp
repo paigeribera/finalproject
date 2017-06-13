@@ -1,8 +1,11 @@
 /*********************************************************************
 ** Program name: Final Project
 ** Author: Paige Ribera
-** Date: 
-** Description: 
+** Date: 6/13/2017
+** Description: The Ship Room class inherits from Room. It is used to create
+** a specific ship room, which is located to the front/north of the player's
+** starting point. In the ship room, the insult is accessed by interacting
+** with the drunks sitting on the ship.
 *********************************************************************/
 #ifndef SHIPROOM_HPP
 #define SHIPROOM_HPP
@@ -27,6 +30,5 @@ class ShipRoom: public Room {
         Room* left;
         Room* right;
         Room* back;
-        Pirate* pirate;
 };
 #endif
